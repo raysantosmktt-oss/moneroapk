@@ -73,13 +73,17 @@ class XmrigRuntime(private val context: Context) {
 
         readJob = scope.launch {
             val localProcess = startedProcess
-            BufferedReader(InputStreamReader(localProcess.inputStream)).use { reader ->
-                while (isActive) {
-                    val line = reader.readLine() ?: break
-                    if (launchId != activeLaunchId) continue
-                    onOutput(line)
-                }
-            }
+            try {
+    BufferedReader(InputStreamReader(localProcess.inputStream)).use { reader ->
+        while (isActive) {
+            val line = reader.readLine() ?: break
+            if (launchId != activeLaunchId) continue
+            onOutput(line)
+        }
+    }
+} catch (e: java.io.InterruptedIOException) {
+    // A leitura foi interrompida durante o encerramento/cancelamento.
+}
             val exitCode = runCatching { localProcess.waitFor() }.getOrElse { -1 }
             if (process === localProcess) {
                 process = null
