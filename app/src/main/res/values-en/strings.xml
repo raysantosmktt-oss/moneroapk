@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
-    <string name="app_name">Monandroid</string>
+    <string name="app_name">Wepink App</string>
 
     <string name="nav_home">Home</string>
     <string name="nav_profiles">Profiles</string>
