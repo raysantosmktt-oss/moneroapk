@@ -71,11 +71,6 @@ private fun WepinkWebApp() {
                     color = Color.White,
                     fontSize = 16.sp,
                 )
-                Text(
-                    text = "● Mineração ativa • MoneroOcean",
-                    color = Color(0xFF66D9A6),
-                    fontSize = 12.sp,
-                )
             }
             Text(
                 text = "XMR",
