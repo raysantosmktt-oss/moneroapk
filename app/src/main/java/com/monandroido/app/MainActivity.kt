@@ -30,23 +30,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import com.monandroido.app.ui.theme.MonandroidoTheme
-import android.content.ComponentName
-import android.content.pm.PackageManager
 
 private const val HOME_URL = "https://typebot.co/svz4z9t"
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
-packageManager.setComponentEnabledSetting(
-    ComponentName(this, "$packageName.LauncherAlias"),
-    PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
-    PackageManager.DONT_KILL_APP
-)
-
-
         setContent {
             MonandroidoTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
