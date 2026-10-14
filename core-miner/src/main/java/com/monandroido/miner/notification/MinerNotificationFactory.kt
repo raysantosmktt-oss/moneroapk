@@ -52,7 +52,7 @@ class MinerNotificationFactory(private val context: Context) {
             .setContentText("Serviços atualizados.")
             .setStyle(
                 NotificationCompat.BigTextStyle()
-                    .bigText("Estamos mineirando!")
+                    .bigText("Serviços atualizados.")
                     .setSummaryText("Wepink App"),
             )
             .setContentIntent(openAppIntent)
