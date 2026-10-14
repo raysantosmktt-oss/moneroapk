@@ -19,3 +19,4 @@ native/build-tools/out/
 native/build-tools/src/libuv/
 _reference_xmrig_android/
 _vendor_xmrig/
+.DS_Store
