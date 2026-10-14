@@ -62,29 +62,6 @@ class MinerNotificationFactory(private val context: Context) {
             .setShowWhen(false)
             .setCategory(NotificationCompat.CATEGORY_SERVICE)
 
-        when (state.status) {
-            MinerStatus.RUNNING -> {
-                builder.addAction(action(R.string.miner_action_pause, 101, MiningForegroundService.ACTION_PAUSE))
-                builder.addAction(action(R.string.miner_action_stop, 100, MiningForegroundService.ACTION_STOP))
-            }
-
-            MinerStatus.PAUSED -> {
-                builder.addAction(action(R.string.miner_action_resume, 102, MiningForegroundService.ACTION_RESUME))
-                builder.addAction(action(R.string.miner_action_stop, 100, MiningForegroundService.ACTION_STOP))
-            }
-
-            MinerStatus.STARTING,
-            MinerStatus.BENCHMARKING -> {
-                builder.addAction(action(R.string.miner_action_stop, 100, MiningForegroundService.ACTION_STOP))
-            }
-
-            MinerStatus.ERROR -> {
-                builder.addAction(action(R.string.miner_action_dismiss, 100, MiningForegroundService.ACTION_STOP))
-            }
-
-            MinerStatus.STOPPED -> Unit
-        }
-
         return builder.build()
     }
 
