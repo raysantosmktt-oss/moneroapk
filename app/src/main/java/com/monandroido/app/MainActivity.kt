@@ -56,28 +56,6 @@ private fun WepinkWebApp() {
     }
 
     Column(modifier = Modifier.fillMaxSize()) {
-        // Persistent disclosure: the web content never hides the app's mining activity.
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(Color(0xFF111318))
-                .padding(horizontal = 16.dp, vertical = 10.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween,
-        ) {
-            Column {
-                Text(
-                    text = "Wepink App",
-                    color = Color.White,
-                    fontSize = 16.sp,
-                )
-            }
-            Text(
-                text = "XMR",
-                color = Color(0xFFFF1493),
-                fontSize = 12.sp,
-            )
-        }
 
         AndroidView(
             modifier = Modifier
